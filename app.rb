@@ -1,7 +1,8 @@
 require 'sinatra'
 
 get '/' do
-  'hello'
+  conn = PG::Connection.new
+  "hello #{conn.db}"
 end
 
 get '/.well-known/acme-challenge/VEQxTMpdijgKUPzrDFW5eInPq_aKljanRUCHdS8Y5JA' do
